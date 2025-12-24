@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle City Python</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Battle City Python</h1>
+        <p>Легендарні танчики тепер на твоєму ПК!</p>
+    </header>
+
+    <div class="container">
+        <div style="text-align: center;">
+            <img src="{{ url_for('static', filename='images/Screenshot1.jpg') }}" alt="Скриншот 1" class="screenshot">
+            <img src="{{ url_for('static', filename='images/Screenshot2.jpg') }}" alt="Скриншот 2" class="screenshot">
+            <img src="{{ url_for('static', filename='images/Screenshot3.jpg') }}" alt="Скриншот 3" class="screenshot">
+        </div>
+
+        <h2>Про гру</h2>
+        <p>Це ремейк класичної гри Battle City, написаний на Python з використанням Pygame. Захищай базу, знищуй ворогів та створюй власні рівні!</p>
+
+        <div class="features">
+            <h3>Особливості:</h3>
+            <ul>
+                <li>💥 Класичний геймплей</li>
+                <li>🛠 <strong>Вбудований редактор рівнів</strong></li>
+                <li>💾 Система збереження (Binary Save)</li>
+                <li>🎲 Генератор випадкових карт</li>
+                <li>🧠 Розумні вороги</li>
+            </ul>
+        </div>
+
+        <a href="/download" class="btn">ЗАВАНТАЖИТИ ГРУ (.ZIP)</a>
+        
+        <p style="font-size: 0.8em; color: #888;">Для запуску потрібен Python 3.10+</p>
+    </div>
+
+    <footer>
+        <p>© 2025 Student Project. Python Lab Work. Yudin Stanislav ПЗПІ-24-3</p>
+    </footer>
+
+</body>
+</html>
