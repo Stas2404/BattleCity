@@ -35,9 +35,7 @@ def run_game(screen, level_filename, save_data=None):
         level_map = Utils.generate_random_level()
     else:
         level_map = Utils.load_level_from_file(level_filename)
-
-    Utils.get_unique_block_types(level_map)
-    
+        
     if not level_map:
         return
 
@@ -116,6 +114,16 @@ def run_game(screen, level_filename, save_data=None):
                 if event.key == pygame.K_ESCAPE:
                     running = False
                 
+                cheat_codes = {
+                pygame.K_h: lambda: player.heal(5),
+                pygame.K_k: lambda: [enemy.kill() for enemy in enemies],
+                pygame.K_l: lambda: player.add_speed_boost(3000)
+                }
+            
+                if event.key in cheat_codes:
+                    cheat_codes[event.key]()
+                    print(f"[CHEAT] Активовано код: {pygame.key.name(event.key)}")
+                
                 if event.key == pygame.K_F5:
                     data_to_save = {
                         'level': level_filename,
@@ -124,7 +132,8 @@ def run_game(screen, level_filename, save_data=None):
                     }
                     if Utils.save_game_binary(data_to_save):
                         print("Game Saved!")
-
+            
+            
         if not player_group:
             print("Game Over - Player Died")
             result_message = "DEFEAT"
