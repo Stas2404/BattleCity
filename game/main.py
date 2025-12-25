@@ -35,7 +35,9 @@ def run_game(screen, level_filename, save_data=None):
         level_map = Utils.generate_random_level()
     else:
         level_map = Utils.load_level_from_file(level_filename)
-        
+
+    Utils.get_unique_block_types(level_map)
+    
     if not level_map:
         return
 
