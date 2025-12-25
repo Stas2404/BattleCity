@@ -115,3 +115,14 @@ def spawn_point_generator(level_map, tile_size):
         x = col * tile_size
         y = row * tile_size
         yield (x, y)
+
+def get_unique_block_types(level_map):
+    unique_blocks = set() 
+    
+    for row in level_map:
+        for char in row:
+            if char != '0':
+                unique_blocks.add(char)
+                
+    print(f"Унікальні блоки на цьому рівні: {unique_blocks}")
+    return unique_blocks
