@@ -9,7 +9,7 @@ def home():
 
 @app.route('/download')
 def download_game():
-    return send_from_directory('static', 'game.zip', as_attachment=True)
+    return send_from_directory('static', 'Battle city.zip', as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
